@@ -5,6 +5,11 @@ services:
     image: adminer
     container_name: adminer
     restart: always
+    environment:
+      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_MAIL}
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
+      VIRTUAL_PATH: ${VIRTUAL_PATH}
     ports:
       - '8080:8080'
 
