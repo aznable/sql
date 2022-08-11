@@ -10,8 +10,9 @@ services:
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_MAIL}
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       VIRTUAL_PATH: ${VIRTUAL_PATH}
-    ports:
-      - '8080:8080'
+      VIRTUAL_PORT: ${VIRTUAL_PORT}
+    expose:
+      - ${VIRTUAL_PORT}
 
   mysql:
     image: mysql:5.7
