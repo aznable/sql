@@ -4,7 +4,6 @@ services:
   adminer:
     image: adminer
     container_name: adminer
-    restart: always
     environment:
       LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_MAIL}
@@ -21,6 +20,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - ./mysql:/var/lib/mysql
+      - ./scripts:/home
     ports:
       - '9906:3306'
 
